@@ -23,7 +23,8 @@ before_deploy:
   - rm -f /tmp/terraform.zip
 
 deploy:
-  provider: script
-  script: ./deploy.sh
-  on:
-    branch: master
+  - provider: script
+    script: ./deploy.sh
+    on:
+      repo: jhourque/simple-php-app
+      branch: master
