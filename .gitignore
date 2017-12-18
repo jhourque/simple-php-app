@@ -1,0 +1,7 @@
+# Terraform
+*.tfstate*
+.terraform
+terraform.tfstate*
+terraform.backup
+*.swp
+travis.log
