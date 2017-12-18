@@ -27,6 +27,10 @@ variable front_elb_protocol {
 resource "aws_key_pair" "front" {
   key_name   = "${var.project_name}-front"
   public_key = "${file("~/.ssh/id_rsa.42.pub")}"
+
+  lifecycle {
+    ignore_changes = "*"
+  }
 }
 
 data "template_file" "userdata" {
