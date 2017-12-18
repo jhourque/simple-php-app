@@ -58,6 +58,9 @@ resource "aws_instance" "front" {
   tags {
     Name = "front${count.index}"
   }
+  lifecycle {
+    create_before_destroy  = true
+  }
 }
 
 resource "aws_elb" "front" {
