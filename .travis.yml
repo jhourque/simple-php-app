@@ -24,13 +24,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: 
-    - cd terraform
-    - terraform init
-    - terraform taint 'aws_instance.front.0'
-    - terraform apply -auto-approve
-    - terraform taint 'aws_instance.front.1'
-    - terraform apply -auto-approve
-    - cd ..
+  script: ./deploy.sh
   on:
     branch: master
